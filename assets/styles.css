@@ -1,23 +1,223 @@
 * {
   box-sizing: border-box;
+  margin: 0; 
+  padding: 0;
+}
+
+:root {
+  /* declare a variable with `--` syntax */
+  --gradient-purple-black: linear-gradient(125deg, rgb(20, 20, 15), rgb(20, 20, 15), rgb(20, 20, 15), rgb(88, 44, 181));
+  --light: rgb(231, 228, 236);
+  --navlink-color: #b9c6ae;
 }
 
 body {
   margin: 0;
   padding: 0;
+  border: 0px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  /* background-color: black; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+
+.header {
+  height: 115px;
+  padding-top: 15px;
+  background-image: var(--gradient-purple-black);
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  color: #ffffff;
 }
 
-p {
-  margin: 0;
+.header h1 {
+  display: inline-block;
+  font-size: 48px;
+  color: black;
+  background-color: var(--light);
 }
+
+/* ".header nav" selects the 3 links in the navigation section */
+
+.header nav {
+  float: right;
+
+  margin-right: 100px;
+  padding-top: 25px;
+ 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+}
+
+/* "list-style-type" property sets the marker or bullet point */
+
+.header nav ul {
+  list-style-type: none;
+}
+
+.header nav ul li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+a {
+  color: white;
+}
+
+.hero-banner {
+  height: 140px;
+  width: 100%;
+  padding: 0px;
+  margin-top: 20px;
+  border-radius: 0%;
+  background-position: top;
+  background-image: url("../images/abstract black background.png");
+  background-size: cover;
+}
+
+.hero-banner h2 {
+  /* 
+  https://stackoverflow.com/questions/57222615/css-display-as-inline-block-background-color-property-doesnt-cover-the-content 
+  */
+  display: inline-block;
+  position: relative;
+  left: 90%;
+  top: 45%;
+  transform: translateX(-100%);
+  color: rgb(247, 238, 238);
+  background-color: var(--gradient-purple-black);
+  /* text-align: end; */
+  /* padding-top: 40px; */
+  /* padding-right: 150px; */
+  padding-bottom: 0%;
+}
+
+nav a {
+  /* border-bottom: 3px solid var(--light); */
+  text-underline-offset: 12px;
+}
+
+main {
+  margin-top: 150px;
+}
+
+ {
+  
+}
+/* "list-style-type" property sets the marker or bullet point */
+
+/* .header nav ul {
+    list-style-type: none;
+} */
+
+/* .header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+} */ 
+ 
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 20px;
+
+}
+
+.main-list {
+  border-right: 5px solid black;
+}
+.about-me {
+  flex: 25%;
+}
+
+.about-text {
+  flex: 75%;
+  padding-left: 30px;
+}
+
+
+/* .workGrid {
+  display:inline-block
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  padding-right: 20px;
+
+} */
+
+.workList {
+border-right: 5px solid black;
+}
+
+.work{
+  display: flex;
+  flex: 25%;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 20px;
+}
+
+.workGrid {
+  /* margin: 0px 5%; */
+  display: grid;
+  flex: 75%;
+  gap: 5px;
+  justify-content: space-evenly;
+  min-height: 500px;
+  height: 70vh;
+  padding-left: 25px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "featuredProject featuredProject"
+    "secondProject thirdProject"
+    "fourthProject fifthProject"
+    ;
+}
+
+#featuredProject {
+  grid-area: featuredProject;
+  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+}
+
+#secondProject {
+  grid-area: secondProject;
+  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+}
+
+#thirdProject {
+  grid-area: thirdProject;
+  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+}
+
+#fourthProject {
+  grid-area: fourthProject;
+  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+}
+
+#fifthProject {
+  grid-area: fifthProject;
+  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+}
+
+.heroGridArea {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+/* 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+
+/* @media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }  */

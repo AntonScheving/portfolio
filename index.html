@@ -6,39 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Anton Scheving Portfolio</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
-  <!-- main logo / nav -->
   <header>
-    <h1>Anton Scheving</h1>
-    <nav>
-    </nav>
-  </header>
-
-  <!-- hero banner -->
-  <section class="hero-banner">
-    <div>
-      <h2>subtitle</h2>
+    <div class="header">
+      <!-- Added a home link in the <h1> 
+          To create extra spaces before, after, or in-between your text, use the &nbsp; (non-breaking space) extended HTML character
+        -->
+      <a href="https://antonscheving.com">
+        <h1>&nbsp;&nbsp;Anton Scheving&nbsp;</h1>
+      </a>
+      <nav>
+        <ul>
+          <!-- 
+             All list items have been assigned their own ID with the "#". 
+           -->
+          <li>
+            <a href="#about-me">&nbsp;About Me&nbsp;</a>
+          </li>
+          <li>
+            <a href="#work">&nbsp;Work&nbsp;</a>
+          </li>
+          <li>
+            <a href="#contact-me">&nbsp;Contact Me&nbsp;</a>
+          </li>
+          <li>
+            <a href="#resume">&nbsp;Resume&nbsp;</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hero-banner">
+        <h2>&nbsp;Digital Web Space Designer & Developer&nbsp;</h2>
+      </div>
     </div>
-  </section>
-
-  <main class="page-wrapper">
+  </header>
+  <main>
     <!-- about me -->
-    <section class="page-section" id="about">
-      <h2>About Me</h2>
+    <section class="about-me" id="about">
+      <h2 class="main-list">About Me&nbsp;</h2>
+      <article class="about-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit, accusantium obcaecati odit
+        pariatur explicabo mollitia laudantium suscipit autem recusandae praesentium aut deserunt architecto eligendi
+        quas dicta necessitatibus perferendis ipsum?
+      </article>
     </section>
-
-    <!-- portfolio container -->
-    <section class="page-section" id="work">
-      <h2>Work</h2>
+    
+    <section class="work" id="work">
+        <h2 class="workList">Work&nbsp;</h2>
+        <!-- change the article to a more suitable semantic tag -->
+        <section class="workGrid">
+          <div id="featuredProject" class="heroGridArea">
+          <div id="secondProject" class="heroGridArea">
+          <div id="thirdProject" class="heroGridArea">
+          <div id="fourthProject" class="heroGridArea">
+          <div id="fifthProject" class="heroGridArea">
+        </section>
     </section>
 
     <!-- contact -->
-    <section class="page-section contact" id="contact">
-      <h2>Contact Me</h2>
-    </section>
+    <!-- <section class="contact-me" id="contact">
+      <h2 class="main-list">Contact Me&nbsp;</h2>
+    </section> -->
   </main>
 </body>
 
