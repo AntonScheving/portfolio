@@ -9,37 +9,40 @@
 :root {
   /* declare a variable with `--` syntax */
   --gradient-purple-black: linear-gradient(125deg, rgb(20, 20, 15), rgb(20, 20, 15), rgb(20, 20, 15), rgb(88, 44, 181));
-  --light: rgb(231, 228, 236);
+  --light: rgb(234, 231, 239);
   --navlink-color: #b9c6ae;
   --borderStyle: 5px solid black;
+  --headingColor: rgb(9, 8, 8);
 }
 
 body {
-  /* There is no need to have this on as it is already applied to the whole page?
-  margin: 0;
-  padding: 0; */
-  border: 0px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  /* where is best to place the line height? */
+  /* This sets the line heigth for all the text in the body */
   line-height: 1.5;
+  background-color: var(--light);
+
 }
 
-
 .header {
-  /* height makes the about come more up on the page, is there a better way? */
+  /* 
+  height determines the position of the "Aboutme section on the vertical axis on the page" 
+  */
   height: 115px;
-   /* padding-top makes the top nav come down */
+   /* padding-top makes the navigation banner move down */
   padding-top: 15px;
+  /* Because the "var(--gradient-purple-black)" is a gradient is has to be "-image" */
   background-image: var(--gradient-purple-black);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  /* Do I need this as the background-image is defined? */
+}
+
+.header a {
   color: var(--light);
 }
 
-.header h1 {
+h1 {
   display: inline-block;
   font-size: 48px;
-  color: black;
+  color: var(--headingColor);
   background-color: var(--light);
 }
 
@@ -65,11 +68,13 @@ body {
   margin-left: 25px;
 }
 
-.header a {
-  color: white;
+nav a {
+  /* border-bottom: 3px solid var(--light); */
+  text-underline-offset: 12px;
 }
 
-.hero-banner {
+/* .heroBanner selects the section belpw the navigation section */
+.heroBanner {
   height: 140px;
   width: 100%;
   padding: 0px;
@@ -80,7 +85,7 @@ body {
   background-size: cover;
 }
 
-.hero-banner h2 {
+.heroBanner h2 {
   /* 
   https://stackoverflow.com/questions/57222615/css-display-as-inline-block-background-color-property-doesnt-cover-the-content 
   */
@@ -91,17 +96,9 @@ body {
   transform: translateX(-100%);
   color: rgb(247, 238, 238);
   background-image: var(--gradient-purple-black);
-  /* text-align: end; */
-  /* padding-top: 40px; */
-  /* padding-right: 150px; */
-  padding-bottom: 0%;
+  padding: 5px;
 }
-
-nav a {
-  /* border-bottom: 3px solid var(--light); */
-  text-underline-offset: 12px;
-}
-
+/* .main  section of the page*/
 main {
   margin-top: 150px;
 }
@@ -111,21 +108,11 @@ main {
   text-align: right;
   font-weight: bold;
  }
-/* "list-style-type" property sets the marker or bullet point */
-
-/* .header nav ul {
-    list-style-type: none;
-} */
-
-/* .header nav ul li {
-    display: inline-block;
-    margin-left: 25px;
-} */ 
- 
+ /* .aboutMe selects the About Me heading section on the left*/
 .aboutMe {
     display: flex;
     flex: 25%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-top: 50px;
     padding-left: 90px;
     padding-right: 50px;
@@ -133,25 +120,18 @@ main {
 
 }
 
-.main-list {
-  border-right: var(--borderStyle)
+/* .mainList selects the headings in the main section */
+.mainList {
+  border-right: var(--borderStyle);
+  padding-right: 20px;
 }
 
-.about-text {
+/* .aboutText selects the "About Me" article text on the right */
+.aboutText {
   flex: 75%;
   padding-left: 30px;
 }
-
-
-/* .workGrid {
-  display:inline-block
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 50px;
-  padding-right: 20px;
-
-} */
-
+/* .Work selects the work heading section */
 .work{
   display: flex;
   flex: 25%;
@@ -159,7 +139,7 @@ main {
   padding-left: 105px;
   padding-right: 20px;
 }
-
+/* .workGrid selects the work portfolio grid element */
 .workGrid {
   /* margin: 0px 5%; */
   display: grid;
@@ -176,19 +156,24 @@ main {
     "featuredProject featuredProject"
     "featuredProject featuredProject"
     "secondProject thirdProject"
-    "fourthProject fifthProject"
-    ;
+    "fourthProject fifthProject";
 }
-/* 
-How do I add a link and make the image highlight as I hover over?
 
-https://github.com/AntonScheving/Horiseon-refactoring-HTML-CSS
-*/
+.heroGridArea {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+/* The following ID selectors select the five portfolios in the workGrid section*/
 #featuredProject {
   grid-area: featuredProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
   border: var(--borderStyle)
-  
 }
 
 #secondProject {
@@ -215,41 +200,23 @@ https://github.com/AntonScheving/Horiseon-refactoring-HTML-CSS
   border: var(--borderStyle)
 }
 
-.heroGridArea {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center;
-  display: flex;
-  position: relative;
-  cursor: pointer;
+/* :hover highligts the portfolio image when you hover over withthe mouce */
+#featuredProject:hover, #secondProject:hover, #thirdProject:hover, #fourthProject:hover, #fifthProject:hover {
+  opacity: .8;
 }
 
-
-.contactMe {
-    display: flex;
-    flex: 25%;
-    flex-wrap: wrap;
-    padding-left: 50px;
-    padding-right: 20px;
-
-}
-
-.contactLinks {
-  flex: 75%;
-  padding-left: 30px;
-}
+/* This is the project title text element on the project grid in the work section */
 div .projectHeading {
   background-image: var(--gradient-purple-black);
   margin-top: 30px;
+  position: absolute;
+  bottom: 15px;
 }
 div .projectHeading h2 {
-  /* background-color: rgb(9, 9, 9); */
   padding-left: 20px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-top: 5px;
-  /* margin-top: 0px; */
   height: 50px;
   color: white;
   font-size: 25px;
@@ -260,20 +227,36 @@ div.projectHeading h3{
   padding-bottom: 5px;
   color: white;
   padding-left: 20px;
-  /* background-color: var(--gradient-purple-black); */
+}
+
+/* Contact Me */
+
+.contactMe {
+    display: flex;
+    flex: 25%;
+    flex-wrap: wrap;
+    padding-left: 51px;
+    /* padding-right: 20px; */
+
 }
 
 .contactLinks {
+}
+
+.contactLinks {
+  display: flex;
+  flex: 75%;
+  flex-direction: row;
+  justify-content: space-evenly;  
   padding-top: 50px;
-  padding-left: 40px;
   font-size: 25px;
   text-underline-offset: 12px;
 }
-/* .projectHeading h2 {
-  font-size: 25px;
-  padding-left: 15px;
-  background-color: rgba(0,0,0,0.7);
-} */
+
+.contactLinks a {
+  color: var(--headingColor);
+  font-weight: bolder;
+}
 
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
@@ -282,3 +265,63 @@ div.projectHeading h3{
   .flex-container {
     flex-direction: column;
   }  */
+
+
+
+  /* Responsive settings */
+    
+    @media only screen and (max-width:1060px){
+      .header nav {
+        float: right;
+      
+        margin-right: 100px;
+        padding-top: 25px;
+       
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+      }
+    }
+
+    @media only screen and (max-width:960px){
+      .header nav {
+        float: right;
+      
+        margin-right: 100px;
+        padding-top: 25px;
+       
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 15px;
+      }
+    }
+        
+    @media only screen and (max-width:900px){
+
+      .header nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* .aboutText selects the "About Me" article text on the right */
+
+/* .mainList selects the headings in the main section */
+/* .mainList {
+  border-right: none;
+  border-bottom: var(--borderStyle);
+  padding-right: none;
+  padding-bottom: 10px
+ */
+}
+
+.aboutMe {
+  display: flex;
+  flex: 25%;
+  flex-wrap: nowrap;
+  padding-top: 50px;
+  padding-left: 90px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+
+}
+      
+        }
