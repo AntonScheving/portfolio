@@ -1,5 +1,7 @@
 * {
+  /* Not sure what this does? */
   box-sizing: border-box;
+  /* I had to make the marging 0 so that the banner and header will touch, Is there a better way? */
   margin: 0; 
   padding: 0;
 }
@@ -13,23 +15,25 @@
 }
 
 body {
+  /* There is no need to have this on as it is already applied to the whole page?
   margin: 0;
-  padding: 0;
+  padding: 0; */
   border: 0px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* where is best to place the line height? */
   line-height: 1.5;
-  /* background-color: black; */
 }
 
 
 .header {
+  /* height makes the about come more up on the page, is there a better way? */
   height: 115px;
+   /* padding-top makes the top nav come down */
   padding-top: 15px;
   background-image: var(--gradient-purple-black);
-
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
-  color: #ffffff;
+  /* Do I need this as the background-image is defined? */
+  color: var(--light);
 }
 
 .header h1 {
@@ -40,7 +44,6 @@ body {
 }
 
 /* ".header nav" selects the 3 links in the navigation section */
-
 .header nav {
   float: right;
 
@@ -87,7 +90,7 @@ body {
   top: 45%;
   transform: translateX(-100%);
   color: rgb(247, 238, 238);
-  background-color: var(--gradient-purple-black);
+  background-image: var(--gradient-purple-black);
   /* text-align: end; */
   /* padding-top: 40px; */
   /* padding-right: 150px; */
@@ -176,12 +179,16 @@ main {
     "fourthProject fifthProject"
     ;
 }
+/* 
+How do I add a link and make the image highlight as I hover over?
 
+https://github.com/AntonScheving/Horiseon-refactoring-HTML-CSS
+*/
 #featuredProject {
   grid-area: featuredProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
   border: var(--borderStyle)
-
+  
 }
 
 #secondProject {
@@ -232,19 +239,27 @@ main {
   flex: 75%;
   padding-left: 30px;
 }
-
+div .projectHeading {
+  background-image: var(--gradient-purple-black);
+  margin-top: 30px;
+}
 div .projectHeading h2 {
   /* background-color: rgb(9, 9, 9); */
-  background-image: var(--gradient-purple-black);
-  padding: 0px;
-  margin-top: 0px;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+  /* margin-top: 0px; */
   height: 50px;
   color: white;
   font-size: 25px;
 }
 
-div.projectHeading span {
+div.projectHeading h3{
   font-size: 15px;
+  padding-bottom: 5px;
+  color: white;
+  padding-left: 20px;
   /* background-color: var(--gradient-purple-black); */
 }
 
