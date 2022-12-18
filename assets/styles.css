@@ -9,6 +9,7 @@
   --gradient-purple-black: linear-gradient(125deg, rgb(20, 20, 15), rgb(20, 20, 15), rgb(20, 20, 15), rgb(88, 44, 181));
   --light: rgb(231, 228, 236);
   --navlink-color: #b9c6ae;
+  --borderStyle: 5px solid black;
 }
 
 body {
@@ -61,7 +62,7 @@ body {
   margin-left: 25px;
 }
 
-a {
+.header a {
   color: white;
 }
 
@@ -102,9 +103,11 @@ main {
   margin-top: 150px;
 }
 
- {
-  
-}
+ section h2 {
+  font-size: 45px;
+  text-align: right;
+  font-weight: bold;
+ }
 /* "list-style-type" property sets the marker or bullet point */
 
 /* .header nav ul {
@@ -116,19 +119,19 @@ main {
     margin-left: 25px;
 } */ 
  
-.about-me {
+.aboutMe {
     display: flex;
+    flex: 25%;
     flex-wrap: wrap;
-    padding-left: 50px;
-    padding-right: 20px;
+    padding-top: 50px;
+    padding-left: 90px;
+    padding-right: 50px;
+    padding-bottom: 10px;
 
 }
 
 .main-list {
-  border-right: 5px solid black;
-}
-.about-me {
-  flex: 25%;
+  border-right: var(--borderStyle)
 }
 
 .about-text {
@@ -146,30 +149,28 @@ main {
 
 } */
 
-.workList {
-border-right: 5px solid black;
-}
-
 .work{
   display: flex;
   flex: 25%;
   padding-top: 50px;
-  padding-left: 100px;
+  padding-left: 105px;
   padding-right: 20px;
 }
 
 .workGrid {
   /* margin: 0px 5%; */
   display: grid;
+  border-color: black;
   flex: 75%;
-  gap: 5px;
+  gap: 15px;
   justify-content: space-evenly;
   min-height: 500px;
   height: 70vh;
   padding-left: 25px;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
+    "featuredProject featuredProject"
     "featuredProject featuredProject"
     "secondProject thirdProject"
     "fourthProject fifthProject"
@@ -179,26 +180,32 @@ border-right: 5px solid black;
 #featuredProject {
   grid-area: featuredProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  border: var(--borderStyle)
+
 }
 
 #secondProject {
   grid-area: secondProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  border: var(--borderStyle)
 }
 
 #thirdProject {
   grid-area: thirdProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  border: var(--borderStyle)
 }
 
 #fourthProject {
   grid-area: fourthProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  border: var(--borderStyle)
 }
 
 #fifthProject {
   grid-area: fifthProject;
   background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  border: var(--borderStyle)
 }
 
 .heroGridArea {
@@ -208,12 +215,51 @@ border-right: 5px solid black;
   align-items: center;
   display: flex;
   position: relative;
+  cursor: pointer;
 }
-/* 
-.flex-container {
-  display: flex;
-  flex-direction: row;
+
+
+.contactMe {
+    display: flex;
+    flex: 25%;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 20px;
+
 }
+
+.contactLinks {
+  flex: 75%;
+  padding-left: 30px;
+}
+
+div .projectHeading h2 {
+  /* background-color: rgb(9, 9, 9); */
+  background-image: var(--gradient-purple-black);
+  padding: 0px;
+  margin-top: 0px;
+  height: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+div.projectHeading span {
+  font-size: 15px;
+  /* background-color: var(--gradient-purple-black); */
+}
+
+.contactLinks {
+  padding-top: 50px;
+  padding-left: 40px;
+  font-size: 25px;
+  text-underline-offset: 12px;
+}
+/* .projectHeading h2 {
+  font-size: 25px;
+  padding-left: 15px;
+  background-color: rgba(0,0,0,0.7);
+} */
+
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 
