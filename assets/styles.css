@@ -98,6 +98,7 @@ nav a {
   background-image: var(--gradient-purple-black);
   padding: 5px;
 }
+
 /* .main  section of the page*/
 main {
   margin-top: 150px;
@@ -172,31 +173,41 @@ main {
 /* The following ID selectors select the five portfolios in the workGrid section*/
 #featuredProject {
   grid-area: featuredProject;
-  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  background-image: url('../assets/images/Horiseon - Refactoring.png');
+  background-position: top;
+  background-size: cover;
   border: var(--borderStyle)
 }
 
 #secondProject {
   grid-area: secondProject;
-  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  background-image: url('../assets/images/StudyGuide.png');
+  background-position: top;
+  background-size: cover;
   border: var(--borderStyle)
 }
 
 #thirdProject {
   grid-area: thirdProject;
-  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  background-image: url('../assets/images/02-portfolio-1.jpg');
+  background-position: top;
+  background-size: cover;
   border: var(--borderStyle)
 }
 
 #fourthProject {
   grid-area: fourthProject;
-  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  background-image: url('../assets/images/02-portfolio-3.jpg');
+  background-position: top;
+  background-size: cover;
   border: var(--borderStyle)
 }
 
 #fifthProject {
   grid-area: fifthProject;
-  background-image: url('https://api.lorem.space/image/album?w=150&h=150');
+  background-image: url('../assets/images/02-run-buddy.jpg');
+  background-position: top;
+  background-size: cover;
   border: var(--borderStyle)
 }
 
@@ -234,13 +245,10 @@ a .projectHeading h3{
 .contactMe {
     display: flex;
     flex: 25%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding-left: 51px;
     /* padding-right: 20px; */
 
-}
-
-.contactLinks {
 }
 
 .contactLinks {
@@ -397,16 +405,28 @@ a .projectHeading h3{
       }
 
       .contactLinks {
-        display: inline-block;
+        display: flex;
         flex: 75%;
-        flex-direction:row;
-        padding-top: 0px;
+        flex-direction: column;
+        padding-top: 20px;
         padding-bottom: 20px;
+        padding-left: 30px;
         font-size: 25px;
         text-underline-offset: 12px;
         text-underline-offset: 3px;
       }
 
+        .contactMe {
+          flex-direction: row;
+          justify-content: space-around;
+          
+        }
+
+        .contactMe .mainList {
+          border-right: var(--borderStyle);
+          border-bottom: none;
+          padding-right: 20px;
+        }
     }
   
     @media only screen and (max-width:500px){
@@ -517,6 +537,7 @@ a .projectHeading h3{
       flex-direction: column;
       padding-top: 20px;
       padding-bottom: 20px;
+      padding-left: 10px;
       font-size: 25px;
       text-underline-offset: 12px;
       text-underline-offset: 3px;
